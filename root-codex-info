@@ -1,0 +1,40 @@
+Thư mục gốc Codex của bạn hiện là:
+
+  /Users/tan/.codex
+
+  Nó giống “home/config directory” của Codex CLI/agent, thường chứa cấu hình, trạng thái phiên làm việc,
+  cache, skills, plugins và dữ liệu lịch sử cục bộ.
+
+  Các phần chính đang có:
+
+  - config.toml: cấu hình chính của Codex, gồm model mặc định, reasoning effort, danh sách project đã trust.
+  - auth.json: thông tin xác thực cục bộ. Không nên share file này.
+  - skills/: các skill Codex có thể dùng, ví dụ openai-docs, playwright, figma, sora, vercel-deploy,
+    security-*.
+
+  - plugins/: plugin đã cài hoặc cache plugin.
+  - cache/: dữ liệu cache cho app/plugin/tool catalog.
+  - sessions/: dữ liệu phiên làm việc theo thời gian.
+  - history.jsonl, session_index.jsonl: lịch sử hoặc chỉ mục hội thoại/lệnh.
+  - *.sqlite, *.sqlite-wal, *.sqlite-shm: database cục bộ cho logs, queue, memory, state, thread history,
+    goals.
+
+  - logs_2.sqlite: log cục bộ, hiện là file lớn nhất trong thư mục này.
+  - memories/, memories_1.sqlite: dữ liệu memory cục bộ nếu tính năng này được dùng.
+  - shell_snapshots/: snapshot trạng thái shell.
+  - thread-writer-locks/: lock file để đồng bộ ghi thread.
+  - ipc/, log/, tmp/, .tmp/: file runtime/tạm thời.
+  - version.json, installation_id: metadata về bản cài đặt.
+
+  Những file/thư mục nên cẩn thận khi copy/share:
+
+  - Không share: auth.json, database *.sqlite*, history.jsonl, session_index.jsonl, logs_2.sqlite*,
+    memories_1.sqlite*.
+
+  - Có thể share có chọn lọc: config.toml, nhưng nên kiểm tra project paths hoặc setting riêng tư.
+  - Có thể version hóa/backup nếu bạn tự quản lý: custom skills/, custom plugins/, một số config không chứa
+    secrets.
+
+  Nói ngắn gọn: /Users/tan/.codex là nơi Codex lưu cấu hình, danh tính phiên, lịch sử, cache, skills/plugins
+  và trạng thái nội bộ. Treat nó như thư mục nhạy cảm, gần giống .ssh, .config, hoặc thư mục profile của một
+  dev tool.
