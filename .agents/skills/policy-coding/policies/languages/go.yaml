@@ -1,0 +1,19 @@
+id: go
+kind: language
+applies_when:
+  files: ["*.go", "go.mod"]
+
+priorities:
+  - Prefer small interfaces owned by consumers.
+  - Return errors with context; keep wrapping useful for callers.
+  - Keep concurrency explicit and cancelable with context where appropriate.
+  - Prefer table-driven tests for variants and edge cases.
+
+avoid:
+  - Package-level mutable state without clear lifecycle.
+  - Goroutines without cancellation or error handling.
+  - Over-abstracting before multiple implementations exist.
+  - Ignoring errors.
+
+validation:
+  preferred_commands: ["go test ./...", "go vet ./..."]

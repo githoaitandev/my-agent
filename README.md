@@ -45,6 +45,25 @@ my-agent/
         references/
           exploration-checklist.md
           agent-prompts.md
+      stage-design/
+        SKILL.md
+        references/
+          design-flow.md
+          design-review.md
+          agent-prompts.md
+      stage-coding/
+        SKILL.md
+        references/
+          coding-flow.md
+          change-safety.md
+          agent-prompts.md
+      stage-testing/
+        SKILL.md
+        references/
+          test-strategy.md
+          test-types.md
+          validation-flow.md
+          agent-prompts.md
       tech-brainstorm/
         SKILL.md
         references/
@@ -68,6 +87,30 @@ my-agent/
           planning-template.md
           risk-rubric.md
           agent-prompts.md
+      system-design/
+        SKILL.md
+        references/
+          architecture-lenses.md
+          tradeoff-rubric.md
+          system-design-template.md
+      design-patterns/
+        SKILL.md
+        references/
+          pattern-router.md
+          creational.md
+          structural.md
+          behavioral.md
+          architecture-patterns.md
+          anti-patterns.md
+      policy-coding/
+        SKILL.md
+        index.yaml
+        policies/
+          languages/
+          frameworks/
+          domains/
+        sources/
+          official-docs.yaml
   .codex/
     config.toml
     agents/

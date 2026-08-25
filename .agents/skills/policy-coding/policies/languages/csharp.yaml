@@ -1,0 +1,23 @@
+id: csharp
+kind: language
+applies_when:
+  files: ["*.cs", "*.csproj", "*.sln"]
+
+priorities:
+  - Prefer nullable-aware APIs and explicit async boundaries.
+  - Use dependency injection patterns already established by the project.
+  - Keep domain logic testable outside framework plumbing when reasonable.
+  - Preserve analyzer, formatting, and project SDK conventions.
+
+avoid:
+  - Blocking on async with Result or Wait in request paths.
+  - Service locator patterns when constructor injection fits.
+  - Catching Exception without meaningful handling or logging.
+  - Changing public contracts without tests or migration notes.
+
+testing:
+  - Prefer xUnit/NUnit/MSTest style already present.
+  - Use integration tests for middleware, DI, persistence, and HTTP behavior.
+
+validation:
+  preferred_commands: ["dotnet test", "dotnet build"]

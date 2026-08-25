@@ -1,0 +1,16 @@
+id: devops
+kind: domain
+applies_when:
+  files: ["Dockerfile", "docker-compose.yml", "compose.yml", ".github/workflows/**"]
+
+priorities:
+  - Prefer reproducible commands declared in repo scripts or CI config.
+  - Keep secrets out of source-controlled files and logs.
+  - Make ports, env vars, volumes, and service health explicit.
+  - Validate config rendering or startup with the narrowest useful command.
+
+avoid:
+  - Broad cleanup commands without approval.
+  - Publishing new ports or changing bind addresses without naming impact.
+  - Relying on local-only state in CI-like workflows.
+  - Retrying failed commands without a changed hypothesis.

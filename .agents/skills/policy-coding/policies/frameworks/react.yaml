@@ -1,0 +1,20 @@
+id: react
+kind: framework
+applies_when:
+  dependencies: ["react", "react-dom"]
+
+priorities:
+  - Keep components focused on rendering and interaction; move complex logic to hooks or helpers when it reduces complexity.
+  - Treat props and state as immutable.
+  - Prefer controlled state only when it improves predictability.
+  - Make loading, empty, error, disabled, and pending states explicit for user-facing flows.
+
+avoid:
+  - Effects for derived state that can be computed during render.
+  - Deep prop drilling when local composition or context is clearer.
+  - Unstable keys and layout-shifting dynamic controls.
+  - Large components that mix data fetching, transformation, and presentation without reason.
+
+testing:
+  - Test user-visible behavior and interactions.
+  - Avoid tests coupled to implementation details.

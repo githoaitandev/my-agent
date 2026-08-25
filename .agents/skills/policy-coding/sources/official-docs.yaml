@@ -1,0 +1,43 @@
+version: 1
+description: "Official documentation sources used only when local policy is missing, stale, version-sensitive, or explicitly requested."
+
+sources:
+  - id: python-docs
+    name: Python Documentation
+    url: "https://docs.python.org/3/"
+    use_when: "Need official language or standard library behavior."
+
+  - id: typescript-handbook
+    name: TypeScript Handbook
+    url: "https://www.typescriptlang.org/docs/"
+    use_when: "Need compiler option or language feature details."
+
+  - id: react-docs
+    name: React Documentation
+    url: "https://react.dev/"
+    use_when: "Need current React API or recommended pattern details."
+
+  - id: nextjs-docs
+    name: Next.js Documentation
+    url: "https://nextjs.org/docs"
+    use_when: "Need current app router, caching, or deployment behavior."
+
+  - id: dotnet-docs
+    name: Microsoft Learn .NET Documentation
+    url: "https://learn.microsoft.com/dotnet/"
+    use_when: "Need current .NET, C#, or ASP.NET Core details."
+
+  - id: go-docs
+    name: Go Documentation
+    url: "https://go.dev/doc/"
+    use_when: "Need official Go language, tooling, or standard library behavior."
+
+  - id: fastapi-docs
+    name: FastAPI Documentation
+    url: "https://fastapi.tiangolo.com/"
+    use_when: "Need current FastAPI or Pydantic integration behavior."
+
+  - id: docker-docs
+    name: Docker Documentation
+    url: "https://docs.docker.com/"
+    use_when: "Need current Docker, Compose, build, or networking behavior."

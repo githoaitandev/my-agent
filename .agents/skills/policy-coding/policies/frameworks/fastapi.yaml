@@ -1,0 +1,19 @@
+id: fastapi
+kind: framework
+applies_when:
+  dependencies: ["fastapi", "pydantic"]
+
+priorities:
+  - Use Pydantic models for request and response boundaries.
+  - Keep dependency injection explicit for auth, database sessions, and config.
+  - Prefer async only when dependencies support async end to end.
+  - Return consistent error shapes for API clients.
+
+avoid:
+  - Doing blocking I/O inside async request handlers.
+  - Leaking internal exception details to clients.
+  - Creating database sessions with unclear lifecycle.
+  - Skipping response model validation for public endpoints.
+
+validation:
+  preferred_commands: ["pytest", "ruff check ."]

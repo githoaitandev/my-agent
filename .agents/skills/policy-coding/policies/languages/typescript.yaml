@@ -1,0 +1,23 @@
+id: typescript
+kind: language
+applies_when:
+  files: ["*.ts", "*.tsx", "tsconfig.json"]
+
+priorities:
+  - Prefer explicit types at module boundaries and exported APIs.
+  - Let inference work inside small local implementation when readability is clear.
+  - Use unknown for untrusted shapes before narrowing.
+  - Preserve existing tsconfig, lint, and formatter settings.
+
+avoid:
+  - Broad any unless isolating legacy or third-party unsafe boundaries.
+  - Type assertions that bypass real validation.
+  - Rewriting working JavaScript to TypeScript unless requested.
+  - Adding abstractions for one caller.
+
+testing:
+  - Prefer behavior-focused tests over snapshot-only coverage.
+  - Keep mocks close to external boundaries.
+
+validation:
+  preferred_commands: ["npm run typecheck", "npm test", "npm run lint"]

@@ -1,0 +1,19 @@
+id: api
+kind: domain
+applies_when:
+  task_keywords: ["api", "endpoint", "route", "request", "response"]
+
+priorities:
+  - Make request validation, response shape, status codes, and errors explicit.
+  - Preserve backward compatibility unless the user asks for a breaking change.
+  - Keep auth, authorization, and tenant/user boundaries visible.
+  - Use idempotency for retryable mutation endpoints when needed.
+
+avoid:
+  - Returning internal errors or stack traces.
+  - Silent partial success without contract.
+  - Changing public fields without tests or migration notes.
+  - Ambiguous 200 responses for validation failures.
+
+testing:
+  - Cover success, validation failure, authorization failure, and relevant edge cases.

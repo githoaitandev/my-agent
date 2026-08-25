@@ -1,0 +1,19 @@
+id: nextjs
+kind: framework
+applies_when:
+  dependencies: ["next"]
+
+priorities:
+  - Respect app router vs pages router conventions already used by the project.
+  - Keep server/client component boundaries explicit.
+  - Put secrets and privileged data access on the server side.
+  - Use route handlers or server actions according to existing project patterns.
+
+avoid:
+  - Adding use client higher in the tree than needed.
+  - Fetching sensitive data in client components.
+  - Mixing router paradigms without a migration reason.
+  - Breaking cache or revalidation behavior without naming the tradeoff.
+
+validation:
+  preferred_commands: ["npm run build", "npm run lint", "npm test"]

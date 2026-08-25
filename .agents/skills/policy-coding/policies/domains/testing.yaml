@@ -1,0 +1,19 @@
+id: testing
+kind: domain
+applies_when:
+  task_keywords: ["test", "spec", "coverage", "validate", "regression"]
+
+priorities:
+  - Test observable behavior and important contracts.
+  - Add regression tests for bug fixes.
+  - Keep test setup readable and close to existing patterns.
+  - Choose the smallest test that catches the risk.
+
+avoid:
+  - Tests that only assert implementation details.
+  - Snapshot-only tests for complex behavior.
+  - Excessive mocking of the unit's own logic.
+  - Broad flaky end-to-end tests when lower-level tests prove the behavior.
+
+validation:
+  preferred_commands: ["test", "typecheck", "lint", "build"]

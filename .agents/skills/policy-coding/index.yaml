@@ -1,0 +1,72 @@
+version: 1
+description: "Routing index for concise local coding policies. Load only matching policy files."
+
+policies:
+  - id: python
+    path: policies/languages/python.yaml
+    triggers:
+      files: ["*.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini"]
+      dependencies: ["pytest", "ruff", "mypy", "fastapi", "django"]
+
+  - id: typescript
+    path: policies/languages/typescript.yaml
+    triggers:
+      files: ["*.ts", "*.tsx", "tsconfig.json", "package.json"]
+      dependencies: ["typescript", "tsx", "ts-node"]
+
+  - id: csharp
+    path: policies/languages/csharp.yaml
+    triggers:
+      files: ["*.cs", "*.csproj", "*.sln", "global.json"]
+      dependencies: ["Microsoft.NET.Sdk", "xunit", "NUnit"]
+
+  - id: go
+    path: policies/languages/go.yaml
+    triggers:
+      files: ["*.go", "go.mod", "go.sum"]
+      dependencies: ["testing", "golangci-lint"]
+
+  - id: react
+    path: policies/frameworks/react.yaml
+    triggers:
+      files: ["*.jsx", "*.tsx"]
+      dependencies: ["react", "react-dom"]
+
+  - id: nextjs
+    path: policies/frameworks/nextjs.yaml
+    triggers:
+      files: ["next.config.js", "next.config.mjs", "next.config.ts", "app/**", "pages/**"]
+      dependencies: ["next"]
+
+  - id: aspnet-core
+    path: policies/frameworks/aspnet-core.yaml
+    triggers:
+      files: ["Program.cs", "appsettings.json", "*.csproj"]
+      dependencies: ["Microsoft.AspNetCore", "Microsoft.NET.Sdk.Web"]
+
+  - id: fastapi
+    path: policies/frameworks/fastapi.yaml
+    triggers:
+      files: ["*.py"]
+      dependencies: ["fastapi", "uvicorn", "pydantic"]
+
+  - id: api
+    path: policies/domains/api.yaml
+    triggers:
+      task_keywords: ["api", "endpoint", "route", "controller", "status code", "request", "response"]
+
+  - id: database
+    path: policies/domains/database.yaml
+    triggers:
+      task_keywords: ["database", "migration", "query", "transaction", "schema", "sql", "orm"]
+
+  - id: testing
+    path: policies/domains/testing.yaml
+    triggers:
+      task_keywords: ["test", "spec", "coverage", "validate", "regression", "mock"]
+
+  - id: devops
+    path: policies/domains/devops.yaml
+    triggers:
+      files: ["Dockerfile", "docker-compose.yml", "compose.yml", ".github/workflows/**"]
+      task_keywords: ["docker", "ci", "workflow", "deploy", "env", "build", "port"]

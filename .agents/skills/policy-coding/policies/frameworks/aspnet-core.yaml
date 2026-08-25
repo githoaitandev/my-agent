@@ -1,0 +1,19 @@
+id: aspnet-core
+kind: framework
+applies_when:
+  dependencies: ["Microsoft.AspNetCore", "Microsoft.NET.Sdk.Web"]
+
+priorities:
+  - Follow existing minimal API, controller, Razor, or Blazor conventions in the repo.
+  - Keep middleware order intentional.
+  - Use configuration and options patterns for environment-specific settings.
+  - Keep authentication and authorization explicit at endpoints or policies.
+
+avoid:
+  - Reading secrets from source-controlled config.
+  - Registering services with lifetimes that conflict with dependencies.
+  - Swallowing request pipeline exceptions without observability.
+  - Changing auth, CORS, or cookie behavior without focused validation.
+
+validation:
+  preferred_commands: ["dotnet test", "dotnet build"]

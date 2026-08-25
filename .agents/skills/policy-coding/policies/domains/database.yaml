@@ -1,0 +1,19 @@
+id: database
+kind: domain
+applies_when:
+  task_keywords: ["database", "migration", "query", "transaction", "schema"]
+
+priorities:
+  - Treat migrations and persistence semantics as high risk.
+  - Keep transactions explicit around multi-step writes.
+  - Prefer parameterized queries and ORM-safe APIs.
+  - Consider indexes, locks, backfills, and rollback for schema changes.
+
+avoid:
+  - Destructive migrations without explicit approval and rollback discussion.
+  - N+1 query regressions.
+  - Hidden timezone or collation assumptions.
+  - Changing data meaning without migration tests or notes.
+
+testing:
+  - Use integration tests for transaction and persistence behavior when feasible.

@@ -1,0 +1,23 @@
+id: python
+kind: language
+applies_when:
+  files: ["*.py", "pyproject.toml", "requirements.txt"]
+
+priorities:
+  - Prefer clear, typed function boundaries for public helpers and cross-module APIs.
+  - Keep local implementation simple; avoid class-heavy designs for simple data flow.
+  - Prefer pathlib, context managers, and standard library tools when adequate.
+  - Preserve existing formatter, linter, and import-order conventions.
+
+avoid:
+  - Broad bare except blocks.
+  - Mutable default arguments.
+  - Hidden import-time side effects.
+  - Introducing global state where dependency injection or explicit parameters fit.
+
+testing:
+  - Prefer pytest-style focused tests when the repo uses pytest.
+  - Cover bug fixes with regression tests around observable behavior.
+
+validation:
+  preferred_commands: ["pytest", "ruff check .", "mypy ."]
