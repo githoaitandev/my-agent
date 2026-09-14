@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend 3D"
+  short_description: "Route Three.js, R3F, WebGL, and GSAP work"
+  default_prompt: "Use $frontend-3d to build or improve this immersive web experience with the appropriate 3D and animation skills."
