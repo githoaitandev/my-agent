@@ -2,6 +2,10 @@
 
 Simple reusable Codex agent profile.
 
+## Installation
+
+### macOS and Linux
+
 Install into the current project:
 
 ```bash
@@ -21,12 +25,35 @@ Overwrite existing target files:
 /path/to/my-agent/install.sh /path/to/project --force
 ```
 
+### Windows PowerShell
+
+Install into the current project:
+
+```powershell
+& "C:\path\to\my-agent\install.ps1"
+```
+
+Install into an explicit project:
+
+```powershell
+& "C:\path\to\my-agent\install.ps1" "C:\path\to\project"
+```
+
+Overwrite existing target files:
+
+```powershell
+& "C:\path\to\my-agent\install.ps1" "C:\path\to\project" --force
+```
+
+Both launchers run the same Python installer. On Windows, use `install.ps1`; Git Bash users can also use `install.sh`.
+
 ## Structure
 
 ```text
 my-agent/
   AGENTS.md
   install.sh
+  install.ps1
   README.md
   scripts/
     install.py

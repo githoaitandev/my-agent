@@ -23,6 +23,12 @@ When the user asks to install this profile into a project, run the source repo's
 /path/to/my-agent/install.sh /path/to/target-project
 ```
 
+On Windows PowerShell, use:
+
+```powershell
+& "C:\path\to\my-agent\install.ps1" "C:\path\to\target-project"
+```
+
 Use `--force` only when the user explicitly wants to override existing target files.
 
 ## Subagent Roles

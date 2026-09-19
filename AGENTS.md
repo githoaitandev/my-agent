@@ -7,7 +7,7 @@ This repository is a reusable Codex agent profile. Its root files are intended t
 - `AGENTS.md` contains durable project instructions.
 - `.agents/skills/` contains repo-local Codex skills.
 - `.codex/` contains Codex runtime config, subagents, hooks, and hook scripts.
-- `install.sh` applies this profile to the current working directory or to an explicit target path.
+- `install.sh` (macOS/Linux/Git Bash) and `install.ps1` (Windows PowerShell) apply this profile to the current working directory or to an explicit target path.
 
 ## Workflow
 
